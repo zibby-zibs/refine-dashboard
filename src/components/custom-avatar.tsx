@@ -1,10 +1,13 @@
 import React from "react";
 import { Avatar as AntdAvatar, AvatarProps } from "antd";
+import { getNameInitials } from "@/utilities";
+import { Text } from "./text";
 
 type Props = AvatarProps & {
-  name: string;
+  name?: string;
 };
 const CustomAvatar = ({ name, style, ...rest }: Props) => {
+   
   return (
     <AntdAvatar
       alt="Oloyede Hephzibah"
@@ -14,9 +17,11 @@ const CustomAvatar = ({ name, style, ...rest }: Props) => {
         display: "flex",
         alignItems: "center",
         border: "none",
+        ...style
       }}
+      {...rest}
     >
-      Ol
+      {getNameInitials(name || '')}
     </AntdAvatar>
   );
 };
