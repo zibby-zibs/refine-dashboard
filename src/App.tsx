@@ -23,6 +23,10 @@ import { Home, ForgotPassword, Login, Register } from "./pages";
 import Layout from "./components/layout";
 import { authProvider } from "./providers/auth";
 import { resources } from "./config/resources";
+import CompanyList from "./pages/company/list";
+import Create from "./pages/company/create";
+import EditPage from "./pages/company/edit";
+import List from "./pages/company/tasks/list";
 
 function App() {
   return (
@@ -65,6 +69,12 @@ function App() {
                   }
                 >
                   <Route index element={<Home />} />
+                  <Route path="companies">
+                    <Route index element={<CompanyList />} />
+                    <Route path="new" element={<Create />} />
+                    <Route path="edit/:id" element={<EditPage />} />
+                    <Route path="task" index element={<List />} />
+                  </Route>
                 </Route>
               </Routes>
               <RefineKbar />

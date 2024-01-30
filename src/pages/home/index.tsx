@@ -1,4 +1,4 @@
-import { DealsCharts, UpcomingEvents } from "@/components";
+import { DealsCharts, LatestActivities, UpcomingEvents } from "@/components";
 import DashboardTotalCountCard from "@/components/home/total-count-card";
 import { DASHBOARD_TOTAL_COUNTS_QUERY } from "@/graphql/queries";
 import { DashboardTotalCountsQuery } from "@/graphql/types";
@@ -65,6 +65,16 @@ export const Home = () => {
           }}
         >
           <DealsCharts />
+        </Col>
+      </Row>
+      <Row
+        gutter={[32, 32]}
+        style={{
+          marginTop: "32px",
+        }}
+      >
+        <Col xs={24}>
+          <LatestActivities />
         </Col>
       </Row>
     </div>
